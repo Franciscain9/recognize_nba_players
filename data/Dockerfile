@@ -1,4 +1,7 @@
-FROM joyzoursky/python-chromedriver:3.9-selenium
-WORKDIR /usr/src
+FROM joyzoursky/python-chromedriver:3.8-selenium
+WORKDIR /app
 COPY . .
-RUN pip instal -r requirements.txt
+RUN mkdir images \
+    && pip install --upgrade pip \
+    && pip install -r requirements.txt
+CMD python3 ./src/main.py

@@ -25,7 +25,7 @@ class Google :
         chrome_options.add_argument('--disable-gpu')
         chrome_options.add_argument('--disable-dev-shm-usage')
         driver_path = "./driver/chromedriver"  
-        self.driver = webdriver.Chrome( driver_path, options=chrome_options)
+        self.driver = webdriver.Chrome(options=chrome_options)
         self.driver.implicitly_wait(10)
         self.driver.set_window_size(1024, 768)
 
