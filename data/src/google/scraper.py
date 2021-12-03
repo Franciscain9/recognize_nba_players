@@ -24,7 +24,6 @@ class Google :
         chrome_options.add_argument('--headless')
         chrome_options.add_argument('--disable-gpu')
         chrome_options.add_argument('--disable-dev-shm-usage')
-        driver_path = "./driver/chromedriver"  
         self.driver = webdriver.Chrome(options=chrome_options)
         self.driver.implicitly_wait(10)
         self.driver.set_window_size(1024, 768)
@@ -51,7 +50,7 @@ class Google :
 
         element = self.driver.find_element_by_tag_name("body")
         #correct before deployment
-        for i in range(1):
+        for i in range(100):
             element.send_keys(Keys.PAGE_DOWN)
             time.sleep(0.1)
         
@@ -77,7 +76,7 @@ class Google :
         self.image_urls = set()
         error_clicks = results_start =  0
         #correct before deployment
-        for img in self.thumbnail_results[0:10] : 
+        for img in self.thumbnail_results : 
             
             print("Total Errors till now:", error_clicks)
             try:
