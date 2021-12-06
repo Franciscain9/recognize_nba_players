@@ -1,7 +1,7 @@
-apiVersion: batch/v1beta1
+apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: scraping-images
+  name: python-scraping
 spec:
   schedule: "0 0 * * *"
   jobTemplate:
@@ -9,7 +9,7 @@ spec:
       template:
         spec:
           containers:
-          - name: scraping-images
-            image: gcr.io/qualified-sun-333022/python-scraping:1.0
+          - name: python-scraping
+            image: gcr.io/qualified-sun-333022/python-scraping:latest
             imagePullPolicy: IfNotPresent
           restartPolicy: OnFailure
