@@ -50,7 +50,7 @@ class Google :
 
         element = self.driver.find_element_by_tag_name("body")
         #correct before deployment
-        for i in range(100):
+        for i in range(1):
             element.send_keys(Keys.PAGE_DOWN)
             time.sleep(0.1)
         
@@ -76,7 +76,7 @@ class Google :
         self.image_urls = set()
         error_clicks = results_start =  0
         #correct before deployment
-        for img in self.thumbnail_results : 
+        for img in self.thumbnail_results[0:10] : 
             
             print("Total Errors till now:", error_clicks)
             try:
