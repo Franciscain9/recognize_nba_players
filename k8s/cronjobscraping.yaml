@@ -10,6 +10,14 @@ spec:
         spec:
           containers:
           - name: python-scraping
-            image: gcr.io/qualified-sun-333022/python-scraping:latest
+            image: gcr.io/qualified-sun-333022/python-scraping:2.0
             imagePullPolicy: IfNotPresent
+            volumeMounts:
+            - name: credentials-volume
+              mountPath: "/app/credentials"
+              readOnly: true
+          volumes:
+          - name: credentials-volume
+            secret:
+              secretName: gcp-sva-cred
           restartPolicy: OnFailure
