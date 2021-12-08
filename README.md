@@ -49,7 +49,7 @@ mlf-db-postgresql.mlflow.svc.cluster.local - Read/Write connection
 
 ```
 
-Project : 
+Project : https://github.com/artefactory-global/mlflow-serving-example
 
 docker build --tag gcr.io/qualified-sun-333022/mlflow-tracking-server:v1 --file dockerfile_mlflow_tracking .
 
